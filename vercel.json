@@ -1,6 +1,6 @@
 {
-    "buildCommand": "npm run web",
-    "outputDirectory": "dist",
+    "buildCommand": "expo export:web",
+    "outputDirectory": "web-build",
     "devCommand": "expo",
     "cleanUrls": true,
     "framework": null,
