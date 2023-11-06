@@ -23,7 +23,7 @@ export default function LoggedArea({navigation}) {
                 <TextInput style={styles.input} placeholder="LoggedArea" />
             </View>
 
-            <Text>Digite o código da comanda para iniciar um pedido</Text>
+            <Text></Text>
 
         </View>
     );

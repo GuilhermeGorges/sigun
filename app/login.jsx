@@ -22,14 +22,16 @@ export default function Login({ navigation }) {
 
   return (
     <View style={styles.main}>
-      <Image style={styles.hero} source={require('../assets/home.png')} />
-      <View style={styles.container}>
-        <Text style={styles.title}> Sistema </Text>
-        <Text style={styles.title}> Comanda </Text>
-        < TextInput style={styles.input} value={mail} onChangeText={setMail} placeholder='email' />
-        < TextInput style={styles.input} value={password} onChangeText={setPassword} placeholder='senha' secureTextEntry />
+      <View style={styles.imageContainer}>
+        <Image style={styles.hero} source={require('../assets/home.jpg')} />
+        <Text style={styles.overlayTitle}> SIGUN </Text>
+      </View>
+      <View style={styles.loginContainer}>
+        <Text style={styles.title}> LOGIN </Text>
+        <TextInput style={styles.input} value={mail} onChangeText={setMail} placeholder='Usuário' />
+        <TextInput style={styles.input} value={password} onChangeText={setPassword} placeholder='Senha' secureTextEntry />
         <Button onPress={handleLogin}>
-          entrar
+          ENTRAR
         </Button>
         <Text>
           {erro}
