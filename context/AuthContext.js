@@ -11,13 +11,13 @@ export function AuthProvider({children}) {
                 name: "Guilherme Gorges",
                 mail: "guilherme@mail.com"
             })
-            return "sucess"
+            return "success"
         }
         return "Credênciais inválidas."
     }
 
     return (
-        <AuthContext.Provider value={{logar}}>
+        <AuthContext.Provider value={{user, logar}}>
             {children}
         </AuthContext.Provider>
     )
