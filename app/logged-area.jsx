@@ -9,13 +9,13 @@ export default function LoggedArea({navigation}) {
     return (
         <View style={styles.containerBetween}>
             <View style={styles.header}>
-                <View>
-                    <Text>Olá,</Text>
+                <View >
+                    <Text style={styles.welcome}>Bem vindo,</Text>
                     <Text style={styles.title}>{user.name}</Text>
                 </View>
                 
                 <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-                    <MaterialIcons name="exit-to-app" size={24} color="black" />
+                    <MaterialIcons name="exit-to-app" size={24} color="#FFFFFF" />
                 </TouchableOpacity>
             </View>
 

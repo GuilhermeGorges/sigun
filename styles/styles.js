@@ -32,7 +32,8 @@ export const styles = StyleSheet.create({
     transform: [{ translateX: -50 }, { translateY: -50 }],
     fontSize: 20,
     fontWeight: 'bold',
-    color: 'black',
+    color: '#FFFFFF',
+    zIndex: 2,
   },
   hero: {
     position: 'absolute',
@@ -47,9 +48,13 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  welcome: {
+    color: "#FFFFFF",
+  },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
+    color: "#FFFFFF",
   },
   input: {
     padding: 8,
@@ -72,7 +77,9 @@ export const styles = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    margin: 20
+    margin: 20,
+    backgroundColor: '#6C79F1',
+    color: '#FFFFFF',
   },
   thumb: {
     width: 50,
