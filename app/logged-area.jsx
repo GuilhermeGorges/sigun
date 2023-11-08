@@ -4,27 +4,38 @@ import { styles } from '../styles/styles.js';
 import { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 
-export default function LoggedArea({navigation}) {
+export default function LoggedArea({ navigation }) {
     const { user } = useContext(AuthContext)
     return (
-        <View style={styles.containerBetween}>
-            <View style={styles.header}>
-                <View >
-                    <Text style={styles.welcome}>Bem vindo,</Text>
-                    <Text style={styles.title}>{user.name}</Text>
+        <View style={styles.main}>
+            <View style={styles.loggedContainerLeft}>
+                <View style={styles.sidebar}>
+                    <View >
+                        <Text style={styles.welcome}>Bem vindo,</Text>
+                        <Text style={styles.title}>{user.name}</Text>
+                    </View>
+
+                    <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+                        <MaterialIcons name="exit-to-app" size={24} color="#FFFFFF" />
+                    </TouchableOpacity>
                 </View>
-                
-                <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-                    <MaterialIcons name="exit-to-app" size={24} color="#FFFFFF" />
-                </TouchableOpacity>
+
+                <View>
+                    
+                </View>
+
+                <Text></Text>
+
             </View>
 
-            <View>
-                <TextInput style={styles.input} placeholder="LoggedArea" />
+            <View style={styles.loggedContainerRight}>
+                {userFunctions.map((functionName, index) => (
+                    <TouchableOpacity key={index} onPress={() => handleFunctionClick(functionName)}>
+                <Text>{functionName}</Text>
+          </TouchableOpacity>
+        ))}
+
             </View>
-
-            <Text></Text>
-
         </View>
     );
 } 

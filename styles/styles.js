@@ -1,18 +1,42 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  containerBetween: {
-    flex: 1,
-    backgroundColor: '#f5f5f5',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: 20,
-  },
+
+  // general
+
   main: {
     flex: 1,
     flexDirection: 'row',
     backgroundColor: '#FFFFFF',
   },
+  thumb: {
+    width: 50,
+    height: 50,
+    borderRadius: 4,
+  },
+  scroll: {
+    width: '100%',
+  },
+  button: {
+    backgroundColor: '#6C79F1',
+    color: '#FFFFFF',
+    padding: 8,
+    fontWeight: 'bold',
+    paddingHorizontal: 48,
+    borderRadius: 4,
+    marginTop: 20
+  },
+  input: {
+    padding: 8,
+    borderColor: 'F1EEEE',
+    backgroundColor: 'C1C1C1',
+    borderWidth: 1,
+    marginTop: 20,
+    borderRadius: 4
+  },
+
+  // login
+
   imageContainer: {
     flex: 1,
     alignItems: 'center',
@@ -42,11 +66,30 @@ export const styles = StyleSheet.create({
     zIndex: 1,
     marginBottom: 20
   },
-  container: {
+
+  // logged-area
+
+  loggedContainerLeft: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#6C79F1',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  loggedContainerRight: {
+    flex: 2,
+    backgroundColor: '#f5f5f5',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  sidebar: {
+    width: '100%',
+    height: '100%',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    margin: 20,
+    backgroundColor: '#6C79F1',
+    color: '#FFFFFF',
+    padding: 10,
   },
   welcome: {
     color: "#FFFFFF",
@@ -56,38 +99,5 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: "#FFFFFF",
   },
-  input: {
-    padding: 8,
-    borderColor: 'F1EEEE',
-    backgroundColor: 'C1C1C1',
-    borderWidth: 1,
-    marginTop: 20,
-    borderRadius: 4
-  },
-  button: {
-    backgroundColor: '#6C79F1',
-    color: '#FFFFFF',
-    padding: 8,
-    fontWeight: 'bold',
-    paddingHorizontal: 48,
-    borderRadius: 4,
-    marginTop: 20
-  },
-  header: {
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    margin: 20,
-    backgroundColor: '#6C79F1',
-    color: '#FFFFFF',
-  },
-  thumb: {
-    width: 50,
-    height: 50,
-    borderRadius: 4,
-  },
-  scroll: {
-    width: '100%',
-  }
 
 });
