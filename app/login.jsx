@@ -11,12 +11,17 @@ export default function Login({ navigation }) {
   const [mail, setMail] = useState("")
   const [password, setPassword] = useState("")
 
-  function handleLogin() {
-    const res = logar(mail, password)
-    if (res === "success") {
-      navigation.navigate('LoggedArea')
-    } else {
-      setErro(res)
+  async function handleLogin() {
+    try {
+      const response = await logar(mail, password);
+      if (response === "success") {
+        navigation.navigate('LoggedArea');
+      } else {
+        setErro(response);
+      }
+    } catch (error) {
+      console.error("Erro ao fazer login:", error.message);
+      setErro("Erro ao autenticar usuário");
     }
   }
 

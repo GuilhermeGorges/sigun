@@ -29,11 +29,11 @@ export default function LoggedArea({ navigation }) {
             </View>
 
             <View style={styles.loggedContainerRight}>
-                {userFunctions.map((functionName, index) => (
+                {/* {userFunctions.map((functionName, index) => (
                     <TouchableOpacity key={index} onPress={() => handleFunctionClick(functionName)}>
                 <Text>{functionName}</Text>
           </TouchableOpacity>
-        ))}
+        ))} */}
 
             </View>
         </View>
