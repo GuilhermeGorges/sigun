@@ -6,14 +6,14 @@ import { AuthContext } from '../context/AuthContext.js';
 import { useContext, useState } from 'react';
 
 export default function Login({ navigation }) {
-  const { logar } = useContext(AuthContext)
+  const { login } = useContext(AuthContext)
   const [erro, setErro] = useState("")
   const [mail, setMail] = useState("")
   const [password, setPassword] = useState("")
 
   async function handleLogin() {
     try {
-      const response = await logar(mail, password);
+      const response = await login(mail, password);
       if (response === "success") {
         navigation.navigate('LoggedArea');
       } else {
