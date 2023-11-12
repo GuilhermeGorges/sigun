@@ -1,11 +1,32 @@
 import { MaterialIcons } from '@expo/vector-icons';
-import { Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import { styles } from '../styles/styles.js';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
 
+import { fetchUserFunctions } from '../services/api';
+
 export default function LoggedArea({ navigation }) {
-    const { user } = useContext(AuthContext)
+    const { user } = useContext(AuthContext);
+
+  const [userFunctions, setUserFunctions] = useState([]);
+
+  useEffect(() => {
+    const loadUserFunctions = async () => {
+      try {
+        const userFunctions = await fetchUserFunctions(user.profileType);
+        setUserFunctions(userFunctions);
+      } catch (error) {
+      }
+    };
+  
+    loadUserFunctions();
+  }, [user.profileType]);
+
+  const handleFunctionClick = (functionName) => {
+    console.log(`Clicou na função: ${functionName}`);
+  };
+
     return (
         <View style={styles.main}>
             <View style={styles.loggedContainerLeft}>
@@ -21,24 +42,21 @@ export default function LoggedArea({ navigation }) {
                 </View>
 
                 <View>
-                    
+
                 </View>
 
                 <Text></Text>
 
             </View>
 
+{/* view das funções  */}
             <View style={styles.loggedContainerRight}>
-                    <TouchableOpacity >
-                <Text></Text>
-          </TouchableOpacity>
-                {/* {userFunctions.map((functionName, index) => (
+                {userFunctions.map((functionName, index) => (
                     <TouchableOpacity key={index} onPress={() => handleFunctionClick(functionName)}>
-                <Text>{functionName}</Text>
-          </TouchableOpacity>
-        ))} */}
-
+                        <Text>{functionName}</Text>
+                    </TouchableOpacity>
+                ))}
             </View>
         </View>
     );
-} 
+}
