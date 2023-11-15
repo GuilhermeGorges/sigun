@@ -29,7 +29,10 @@ export const fetchUserFunctions = async (profileType) => {
         }
 
         const data = await response.json();
-        return data.functions.map((func) => func.functionName);
+        return data.functions.map((func) => ({
+            functionName: func.functionName,
+            icon: func.icon,
+          }));
     } catch (error) {
         console.error('Erro ao obter funções do usuário:', error.message);
         throw error;

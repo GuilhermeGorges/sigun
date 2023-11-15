@@ -99,5 +99,18 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: "#FFFFFF",
   },
+  functionContainer: {
+  },
+  functionName: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: "#6C79F1",
+
+  },
+  functionIcon: {
+    size: 100,
+    fontWeight: 'bold',
+    color: "#6C79F1",
+  }
 
 });
