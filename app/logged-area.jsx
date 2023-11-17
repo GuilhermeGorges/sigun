@@ -11,14 +11,20 @@ export default function LoggedArea({ navigation }) {
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [userFunctions, setUserFunctions] = useState([]);
+  const [hasMore, setHasMore] = useState(true);
 
   useEffect(() => {
     const loadUserFunctions = async () => {
       try {
         setLoading(true);
         const userFunctionsData = await fetchUserFunctions(user.profileType, page);
-        setUserFunctions((prevFunctions) => [...prevFunctions, ...userFunctionsData]);
-        setPage((prevPage) => prevPage + 1);
+
+        if (userFunctionsData.length === 0) {
+          setHasMore(false);
+        } else {
+          setUserFunctions((prevFunctions) => [...prevFunctions, ...userFunctionsData]);
+          setPage((prevPage) => prevPage + 1);
+        }
       } catch (error) {
         console.error('Error loading user functions:', error);
       } finally {
@@ -26,7 +32,9 @@ export default function LoggedArea({ navigation }) {
       }
     };
 
-    loadUserFunctions();
+    if (hasMore && !loading) {
+      loadUserFunctions();
+    }
   }, [user.profileType, page]);
 
 
@@ -67,16 +75,16 @@ export default function LoggedArea({ navigation }) {
 
 
       <View style={styles.loggedContainerRight}>
-        <FlatList
-          data={userFunctions}
-          renderItem={renderItem}
-          keyExtractor={(item, index) => `${item.functionName}-${index}`}
-          numColumns={2}
-          columnWrapperStyle={styles.flatListColumnWrapper}
-          onEndReached={() => !loading && setPage((prevPage) => prevPage + 1)}
-          onEndReachedThreshold={0.1}
-        />
-      </View>
+      <FlatList
+        data={userFunctions}
+        renderItem={renderItem}
+        keyExtractor={(item, index) => `${item.functionName}-${index}`}
+        horizontal={true}
+        showsHorizontalScrollIndicator={true}
+        onEndReached={() => setLoading(false)}
+        contentContainerStyle={styles.flatListContainer}
+      />
     </View>
+  </View>
   );
 }

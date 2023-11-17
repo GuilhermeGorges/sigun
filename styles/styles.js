@@ -111,6 +111,16 @@ export const styles = StyleSheet.create({
     size: 100,
     fontWeight: 'bold',
     color: "#6C79F1",
-  }
+  },
+
+  loggedContainerRight: {
+    flex: 2,
+    backgroundColor: '#f5f5f5',
+  },
+  flatListContainer: {
+    flexGrow: 1, // Garante que o FlatList ocupe toda a altura disponível
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 
 });
