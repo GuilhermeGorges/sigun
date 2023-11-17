@@ -18,13 +18,8 @@ export default function LoggedArea({ navigation }) {
       try {
         setLoading(true);
         const userFunctionsData = await fetchUserFunctions(user.profileType, page);
-
-        if (userFunctionsData.length === 0) {
-          setHasMore(false);
-        } else {
-          setUserFunctions((prevFunctions) => [...prevFunctions, ...userFunctionsData]);
-          setPage((prevPage) => prevPage + 1);
-        }
+        setUserFunctions((prevFunctions) => [...prevFunctions, ...userFunctionsData]);
+        setPage((prevPage) => prevPage + 1);
       } catch (error) {
         console.error('Error loading user functions:', error);
       } finally {
@@ -32,7 +27,7 @@ export default function LoggedArea({ navigation }) {
       }
     };
 
-    if (hasMore && !loading) {
+    if (!loading) {
       loadUserFunctions();
     }
   }, [user.profileType, page]);
@@ -81,7 +76,7 @@ export default function LoggedArea({ navigation }) {
         keyExtractor={(item, index) => `${item.functionName}-${index}`}
         horizontal={true}
         showsHorizontalScrollIndicator={true}
-        onEndReached={() => setLoading(false)}
+        onEndReachedThreshold={0.1}
         contentContainerStyle={styles.flatListContainer}
       />
     </View>
