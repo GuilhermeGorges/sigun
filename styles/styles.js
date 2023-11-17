@@ -118,7 +118,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#f5f5f5',
   },
   flatListContainer: {
-    flexGrow: 1, // Garante que o FlatList ocupe toda a altura disponível
+    flexGrow: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
