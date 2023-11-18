@@ -1,4 +1,4 @@
-import { MaterialIcons } from '@expo/vector-icons';
+import { AntDesign, MaterialIcons } from '@expo/vector-icons';
 import { Text, TouchableOpacity, View, FlatList, Dimensions } from 'react-native';
 import { styles } from '../styles/styles.js';
 import { useContext, useEffect, useState } from 'react';
@@ -31,7 +31,7 @@ export default function LoggedArea({ navigation }) {
   const renderItem = ({ item }) => (
     <TouchableOpacity onPress={() => handleFunctionClick(item.functionName)}>
       <View style={styles.functionContainer}columnWrapperStyle={{justifyContent: 'space-between'}}>
-        <MaterialIcons style={styles.functionIcon} size={isMobile ? 50 : 150} name={item.icon} />
+        <AntDesign style={styles.functionIcon} size={isMobile ? 50 : 150} name={item.icon} />
         <Text style={styles.functionName}>{item.functionName}</Text>
       </View>
     </TouchableOpacity>
