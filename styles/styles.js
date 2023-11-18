@@ -169,4 +169,16 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: "#FFFFFF",
   },
+  // modal 
+  item: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: "#000000",
+  },
+  modal: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: "#000000",
+  },
+  
 });
