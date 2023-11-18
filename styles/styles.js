@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
 
+
 export const styles = StyleSheet.create({
 
   // general
@@ -38,26 +39,27 @@ export const styles = StyleSheet.create({
   // login
 
   imageContainer: {
-    flex: 1,
+    flex: 2,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#6C79F1',
     position: 'relative'
   },
   loginContainer: {
-    flex: 2,
+    flex: 3,
     backgroundColor: '#F5F5F5',
     alignItems: 'center',
     justifyContent: 'center',
   },
   overlayTitle: {
-    position: 'absolute',
-    top: '50%', 
-    left: '50%',
-    transform: [{ translateX: -50 }, { translateY: -50 }],
-    fontSize: 20,
+    fontSize: 100,
     fontWeight: 'bold',
     color: '#FFFFFF',
     zIndex: 2,
+  },
+  overlayIcon: {
+    fontSize: 200,
+    color: '#FFFFFF',
   },
   hero: {
     position: 'absolute',
@@ -71,7 +73,7 @@ export const styles = StyleSheet.create({
   // left
 
   loggedContainerLeft: {
-    flex: 1,
+    flex: 2,
     backgroundColor: '#6C79F1',
     alignItems: 'center',
     justifyContent: 'center',
@@ -98,7 +100,7 @@ export const styles = StyleSheet.create({
   // right
 
   loggedContainerRight: {
-    flex: 2,
+    flex: 3,
     backgroundColor: '#f5f5f5',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',

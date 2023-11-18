@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo-google-fonts/poppins": "^0.2.3",
     "@expo/vector-icons": "^13.0.0",
     "@expo/webpack-config": "^19.0.0",
     "@react-navigation/native": "^6.1.9",
@@ -17,6 +18,10 @@
     "@types/react": "~18.2.14",
     "debug": "^4.3.4",
     "expo": "^49.0.16",
+    "expo-app-loading": "^2.1.1",
+    "expo-font": "~11.4.0",
+    "expo-google-fonts": "^0.0.0",
+    "expo-splash-screen": "~0.20.5",
     "expo-status-bar": "~1.6.0",
     "npm": "^10.2.3",
     "react": "18.2.0",

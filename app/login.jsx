@@ -1,4 +1,5 @@
 import { Text, TextInput, View, Image } from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons';
 
 import Button from '../components/Button.jsx';
 import { styles } from '../styles/styles.js';
@@ -28,8 +29,11 @@ export default function Login({ navigation }) {
   return (
     <View style={styles.main}>
       <View style={styles.imageContainer}>
-        <Image style={styles.hero} source={require('../assets/home.jpg')} />
+        {/* <Image style={styles.hero} source={require('../assets/home.jpg')} /> */}
         <Text style={styles.overlayTitle}> SIGUN </Text>
+        
+        <MaterialIcons name="school" style={styles.overlayIcon} />
+        
       </View>
       <View style={styles.loginContainer}>
         <Text style={styles.title}> LOGIN </Text>
