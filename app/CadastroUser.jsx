@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { MaterialIcons } from '@expo/vector-icons';
 import { View, Text, Pressable, FlatList, Alert, TouchableOpacity } from 'react-native';
-import { styles } from '../styles/styles'; 
+
+import { styles } from '../styles/styles';
+import { listarUsuarios, excluirUsuario } from '../services/api.js';
+
 import Button from '../components/Button.jsx';
 import ModalCadastro from '../components/ModalCadastro';
 
-import { listarUsuarios, excluirUsuario } from '../services/api.js';
 
 export default function CadastroUser({ navigation }) {
   const [modalVisible, setModalVisible] = useState(false);
@@ -55,7 +57,7 @@ export default function CadastroUser({ navigation }) {
 
   useEffect(() => {
     carregarUsuarios();
-  }, []); 
+  }, []);
   return (
     <View style={styles.main}>
 
@@ -67,12 +69,12 @@ export default function CadastroUser({ navigation }) {
       </View>
 
       <View style={styles.cadastroRight}>
-        <ModalCadastro 
-        modalVisible={modalVisible}
-        setModalVisible={setModalVisible}
-        carregarUsuarios={carregarUsuarios}
+        <ModalCadastro
+          modalVisible={modalVisible}
+          setModalVisible={setModalVisible}
+          carregarUsuarios={carregarUsuarios}
         >
-        
+
         </ModalCadastro>
 
 

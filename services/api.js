@@ -32,7 +32,7 @@ export const fetchUserFunctions = async (profileType) => {
         return data.functions.map((func) => ({
             functionName: func.functionName,
             icon: func.icon,
-          }));
+        }));
     } catch (error) {
         console.error('Erro ao obter funções do usuário:', error.message);
         throw error;
@@ -41,62 +41,62 @@ export const fetchUserFunctions = async (profileType) => {
 
 export const cadastrarUsuarios = async (username, senha, perfil, nome) => {
     try {
-      const response = await fetch(`${BASE_URL}/user/users`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          username: username,
-          password: senha,
-          profileType: perfil,
-          name: nome,
-        }),
-      });
-  
-      if (!response.ok) {
-        throw new Error(`Erro na requisição para cadastrar usuário: ${response.statusText}`);
-      }
-  
-      return response;
+        const response = await fetch(`${BASE_URL}/user/users`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                username: username,
+                password: senha,
+                profileType: perfil,
+                name: nome,
+            }),
+        });
+
+        if (!response.ok) {
+            throw new Error(`Erro na requisição para cadastrar usuário: ${response.statusText}`);
+        }
+
+        return response;
     } catch (error) {
-      console.error('Erro ao cadastrar usuário:', error.message);
-      throw error;
+        console.error('Erro ao cadastrar usuário:', error.message);
+        throw error;
     }
-  };
+};
 
 export const excluirUsuario = async (userId) => {
     try {
-      const response = await fetch(`${BASE_URL}/user/users/${userId}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-  
-      if (!response.ok) {
-        throw new Error(`Erro na requisição para excluir usuário: ${response.statusText}`);
-      }
-  
-      return response;
+        const response = await fetch(`${BASE_URL}/user/users/${userId}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        if (!response.ok) {
+            throw new Error(`Erro na requisição para excluir usuário: ${response.statusText}`);
+        }
+
+        return response;
     } catch (error) {
-      console.error('Erro ao excluir usuário:', error.message);
-      throw error;
+        console.error('Erro ao excluir usuário:', error.message);
+        throw error;
     }
-  };
-  
-  export const listarUsuarios = async (profileType = '') => {
+};
+
+export const listarUsuarios = async (profileType = '') => {
     try {
-      const response = await fetch(`${BASE_URL}/user/users${profileType ? `?profileType=${profileType}` : ''}`);
-  
-      if (!response.ok) {
-        throw new Error(`Erro na requisição para listar usuários: ${response.statusText}`);
-      }
-  
-      const data = await response.json();
-      return data.users;
+        const response = await fetch(`${BASE_URL}/user/users${profileType ? `?profileType=${profileType}` : ''}`);
+
+        if (!response.ok) {
+            throw new Error(`Erro na requisição para listar usuários: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        return data.users;
     } catch (error) {
-      console.error('Erro ao listar usuários:', error.message);
-      throw error;
+        console.error('Erro ao listar usuários:', error.message);
+        throw error;
     }
-  };
+};

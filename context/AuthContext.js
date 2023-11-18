@@ -14,9 +14,9 @@ export function AuthProvider({ children }) {
 
         if (response.ok) {
             setUser({
-              username: data.user.username,
-              profileType: data.user.profileType,
-              name: data.user.name,
+                username: data.user.username,
+                profileType: data.user.profileType,
+                name: data.user.name,
             });
 
             return "success";

@@ -1,9 +1,9 @@
-import { AntDesign, MaterialIcons } from '@expo/vector-icons';
-import { Text, TouchableOpacity, View, FlatList, Dimensions } from 'react-native';
-import { styles } from '../styles/styles.js';
 import { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../context/AuthContext.js';
+import { Text, TouchableOpacity, View, FlatList, Dimensions } from 'react-native';
+import { AntDesign, MaterialIcons } from '@expo/vector-icons';
 
+import { styles } from '../styles/styles.js';
+import { AuthContext } from '../context/AuthContext.js';
 
 import { fetchUserFunctions } from '../services/api.js';
 
@@ -11,7 +11,7 @@ export default function LoggedArea({ navigation }) {
   const { user } = useContext(AuthContext);
   const [userFunctions, setUserFunctions] = useState([]);
 
-  useEffect(() =>  {
+  useEffect(() => {
     const loadUserFunctions = async () => {
       try {
         const userFunctions = await fetchUserFunctions(user.profileType);
@@ -25,13 +25,13 @@ export default function LoggedArea({ navigation }) {
 
 
   const handleFunctionClick = (functionName) => {
-    switch(functionName) {
-      case 'Função 1': 
+    switch (functionName) {
+      case 'Função 1':
         navigation.navigate('CadastroUser');
         console.log(functionName);
         break;
       default:
-        
+
         console.log("default ", functionName);
         break;
     }
@@ -39,7 +39,7 @@ export default function LoggedArea({ navigation }) {
 
   const renderItem = ({ item }) => (
     <TouchableOpacity onPress={() => handleFunctionClick(item.functionName)}>
-      <View style={styles.functionContainer}columnWrapperStyle={{justifyContent: 'space-between'}}>
+      <View style={styles.functionContainer} columnWrapperStyle={{ justifyContent: 'space-between' }}>
         <AntDesign style={styles.functionIcon} size={isMobile ? 50 : 150} name={item.icon} />
         <Text style={styles.functionName}>{item.functionName}</Text>
       </View>
@@ -72,17 +72,17 @@ export default function LoggedArea({ navigation }) {
 
 
       <View style={styles.loggedContainerRight}>
-          <Text style={styles.titleRoxo}>Area do </Text>
+        <Text style={styles.titleRoxo}>Area do </Text>
         <FlatList
           data={userFunctions}
           renderItem={renderItem}
           keyExtractor={(item, index) => `${item.functionName}-${index}`}
           showsVerticalScrollIndicator={true}
           numColumns={isMobile ? 1 : 2}
-          contentContainerStyle={isMobile ? styles.flatListContainerMobile :styles.flatListContainer}
-          columnWrapperStyle={isMobile ? null :{justifyContent: 'space-between'}}
+          contentContainerStyle={isMobile ? styles.flatListContainerMobile : styles.flatListContainer}
+          columnWrapperStyle={isMobile ? null : { justifyContent: 'space-between' }}
         />
+      </View>
     </View>
-  </View>
   );
 }

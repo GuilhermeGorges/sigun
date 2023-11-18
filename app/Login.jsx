@@ -1,10 +1,11 @@
 import { Text, TextInput, View, Dimensions } from 'react-native';
+import { useContext, useState } from 'react';
 import { MaterialIcons } from '@expo/vector-icons';
 
-import Button from '../components/Button.jsx';
 import { styles } from '../styles/styles.js';
 import { AuthContext } from '../context/AuthContext.js';
-import { useContext, useState } from 'react';
+
+import Button from '../components/Button.jsx';
 
 const isMobile = Dimensions.get('window').width < 600;
 
@@ -32,9 +33,9 @@ export default function Login({ navigation }) {
     <View style={styles.main}>
       <View style={styles.imageContainer}>
         <Text style={isMobile ? styles.overlayTitleMobile : styles.overlayTitle}> SIGUN </Text>
-        
+
         <MaterialIcons name="school" style={isMobile ? styles.overlayTitleMobile : styles.overlayIcon} />
-        
+
       </View>
       <View style={styles.loginContainer}>
         <Text style={styles.title}> LOGIN </Text>
