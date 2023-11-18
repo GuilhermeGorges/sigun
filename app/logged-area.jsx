@@ -8,29 +8,16 @@ import { fetchUserFunctions } from '../services/api';
 
 export default function LoggedArea({ navigation }) {
   const { user } = useContext(AuthContext);
-  const [loading, setLoading] = useState(false);
-  const [page, setPage] = useState(1);
   const [userFunctions, setUserFunctions] = useState([]);
-  const [hasMore, setHasMore] = useState(true);
 
-  useEffect(() => {
-    const loadUserFunctions = async () => {
+  useEffect(async() =>  {
       try {
-        setLoading(true);
-        const userFunctionsData = await fetchUserFunctions(user.profileType, page);
+        const userFunctionsData = await fetchUserFunctions(user.profileType);
         setUserFunctions((prevFunctions) => [...prevFunctions, ...userFunctionsData]);
-        setPage((prevPage) => prevPage + 1);
       } catch (error) {
         console.error('Error loading user functions:', error);
-      } finally {
-        setLoading(false);
       }
-    };
-
-    if (!loading) {
-      loadUserFunctions();
-    }
-  }, [user.profileType, page]);
+  }, [user.profileType]);
 
 
   const handleFunctionClick = (functionName) => {
@@ -74,9 +61,9 @@ export default function LoggedArea({ navigation }) {
         data={userFunctions}
         renderItem={renderItem}
         keyExtractor={(item, index) => `${item.functionName}-${index}`}
-        horizontal={true}
-        showsHorizontalScrollIndicator={true}
-        onEndReachedThreshold={0.1}
+        // horizontal={true}
+        // showsHorizontalScrollIndicator={true}
+        numColumns={2} 
         contentContainerStyle={styles.flatListContainer}
       />
     </View>
