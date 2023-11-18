@@ -29,7 +29,7 @@ export default function LoggedArea({ navigation }) {
 
   const renderItem = ({ item }) => (
     <TouchableOpacity onPress={() => handleFunctionClick(item.functionName)}>
-      <View style={styles.functionContainer}>
+      <View style={styles.functionContainer}columnWrapperStyle={{justifyContent: 'space-between'}}>
         <MaterialIcons style={styles.functionIcon} size={150} name={item.icon} />
         <Text style={styles.functionName}>{item.functionName}</Text>
       </View>
@@ -60,14 +60,15 @@ export default function LoggedArea({ navigation }) {
 
 
       <View style={styles.loggedContainerRight}>
-      <FlatList
-        data={userFunctions}
-        renderItem={renderItem}
-        keyExtractor={(item, index) => `${item.functionName}-${index}`}
-        showsVerticalScrollIndicator={true}
-        numColumns={2} 
-        contentContainerStyle={styles.flatListContainer}
-      />
+        <FlatList
+          data={userFunctions}
+          renderItem={renderItem}
+          keyExtractor={(item, index) => `${item.functionName}-${index}`}
+          showsVerticalScrollIndicator={true}
+          numColumns={2} 
+          contentContainerStyle={styles.flatListContainer}
+          columnWrapperStyle={{justifyContent: 'space-between'}}
+        />
     </View>
   </View>
   );

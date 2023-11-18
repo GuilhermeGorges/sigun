@@ -68,16 +68,11 @@ export const styles = StyleSheet.create({
   },
 
   // logged-area
+  // left
 
   loggedContainerLeft: {
     flex: 1,
     backgroundColor: '#6C79F1',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  loggedContainerRight: {
-    flex: 2,
-    backgroundColor: '#f5f5f5',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -99,28 +94,47 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: "#FFFFFF",
   },
+
+  // right
+
+  loggedContainerRight: {
+    flex: 2,
+    backgroundColor: '#f5f5f5',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+  },
+  flatListContainer: {
+    flexGrow: 1,
+    marginTop: 20,
+    marginBottom: 20,
+    marginHorizontal: 70,
+    flex: 1,
+    flexDirection: 'column', // ou 'row' dependendo da orientação desejada
+    justifyContent: 'space-between', // ou 'space-around' dependendo do espaçamento desejado
+    alignItems: 'stretch', 
+    borderWidth: 1,
+    borderRadius: 10, 
+    width: '80%', 
+    height: '80%', 
+  },
   functionContainer: {
+    flex: 1,
+    width: '100%', 
+    height: '100%', 
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 20,
+    borderWidth: 1,
   },
   functionName: {
     fontSize: 24,
     fontWeight: 'bold',
     color: "#6C79F1",
-
+    borderWidth: 1,
   },
   functionIcon: {
-    size: 100,
-    fontWeight: 'bold',
+    fontSize: 100, 
     color: "#6C79F1",
+    borderWidth: 1,
   },
-
-  loggedContainerRight: {
-    flex: 2,
-    backgroundColor: '#f5f5f5',
-  },
-  flatListContainer: {
-    flexGrow: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
 });
