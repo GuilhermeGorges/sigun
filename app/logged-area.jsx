@@ -1,8 +1,9 @@
 import { MaterialIcons } from '@expo/vector-icons';
-import { Text, TouchableOpacity, View, FlatList } from 'react-native';
+import { Text, TouchableOpacity, View, FlatList, Dimensions } from 'react-native';
 import { styles } from '../styles/styles.js';
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
+
 
 import { fetchUserFunctions } from '../services/api';
 
@@ -30,11 +31,13 @@ export default function LoggedArea({ navigation }) {
   const renderItem = ({ item }) => (
     <TouchableOpacity onPress={() => handleFunctionClick(item.functionName)}>
       <View style={styles.functionContainer}columnWrapperStyle={{justifyContent: 'space-between'}}>
-        <MaterialIcons style={styles.functionIcon} size={150} name={item.icon} />
+        <MaterialIcons style={styles.functionIcon} size={isMobile ? 50 : 150} name={item.icon} />
         <Text style={styles.functionName}>{item.functionName}</Text>
       </View>
     </TouchableOpacity>
   );
+
+  const isMobile = Dimensions.get('window').width < 600;
 
   return (
     <View style={styles.main}>
@@ -65,9 +68,9 @@ export default function LoggedArea({ navigation }) {
           renderItem={renderItem}
           keyExtractor={(item, index) => `${item.functionName}-${index}`}
           showsVerticalScrollIndicator={true}
-          numColumns={2} 
+          numColumns={isMobile ? 1 : 2}
           contentContainerStyle={styles.flatListContainer}
-          columnWrapperStyle={{justifyContent: 'space-between'}}
+          columnWrapperStyle={isMobile ? null :{justifyContent: 'space-between'}}
         />
     </View>
   </View>

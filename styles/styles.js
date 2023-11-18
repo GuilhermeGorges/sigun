@@ -133,7 +133,6 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
   },
   functionIcon: {
-    fontSize: 100, 
     color: "#6C79F1",
     borderWidth: 1,
   },
