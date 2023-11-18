@@ -10,13 +10,16 @@ export default function LoggedArea({ navigation }) {
   const { user } = useContext(AuthContext);
   const [userFunctions, setUserFunctions] = useState([]);
 
-  useEffect(async() =>  {
+  useEffect(() =>  {
+    const loadUserFunctions = async () => {
       try {
-        const userFunctionsData = await fetchUserFunctions(user.profileType);
-        setUserFunctions((prevFunctions) => [...prevFunctions, ...userFunctionsData]);
+        const userFunctions = await fetchUserFunctions(user.profileType);
+        setUserFunctions(userFunctions);
       } catch (error) {
-        console.error('Error loading user functions:', error);
       }
+    };
+
+    loadUserFunctions();
   }, [user.profileType]);
 
 
@@ -61,8 +64,7 @@ export default function LoggedArea({ navigation }) {
         data={userFunctions}
         renderItem={renderItem}
         keyExtractor={(item, index) => `${item.functionName}-${index}`}
-        // horizontal={true}
-        // showsHorizontalScrollIndicator={true}
+        showsVerticalScrollIndicator={true}
         numColumns={2} 
         contentContainerStyle={styles.flatListContainer}
       />
