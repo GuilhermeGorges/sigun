@@ -148,11 +148,12 @@ export const styles = StyleSheet.create({
     color: "#6C79F1",
   },
 
-
+// tela cadastro
 
   cadastroLeft: {
     flex: 2,
     alignItems: 'center',
+    textAlign: 'center',
     justifyContent: 'center',
     backgroundColor: '#6C79F1',
     position: 'relative'
@@ -162,5 +163,10 @@ export const styles = StyleSheet.create({
     backgroundColor: '#F5F5F5',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  titleRoxo: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: "#FFFFFF",
   },
 });

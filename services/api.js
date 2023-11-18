@@ -38,3 +38,29 @@ export const fetchUserFunctions = async (profileType) => {
         throw error;
     }
 }
+
+export const cadastrarUsuarios = async (username, senha, perfil, nome) => {
+    try {
+      const response = await fetch(`${BASE_URL}/user/users`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username: username,
+          password: senha,
+          profileType: perfil,
+          name: nome,
+        }),
+      });
+  
+      if (!response.ok) {
+        throw new Error(`Erro na requisição para cadastrar usuário: ${response.statusText}`);
+      }
+  
+      return response;
+    } catch (error) {
+      console.error('Erro ao cadastrar usuário:', error.message);
+      throw error;
+    }
+  };

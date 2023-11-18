@@ -72,6 +72,7 @@ export default function LoggedArea({ navigation }) {
 
 
       <View style={styles.loggedContainerRight}>
+          <Text style={styles.titleRoxo}>Area do </Text>
         <FlatList
           data={userFunctions}
           renderItem={renderItem}
