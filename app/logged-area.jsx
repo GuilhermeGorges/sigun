@@ -27,7 +27,7 @@ export default function LoggedArea({ navigation }) {
   const renderItem = ({ item }) => (
     <TouchableOpacity onPress={() => handleFunctionClick(item.functionName)}>
       <View style={styles.functionContainer}>
-        <MaterialIcons style={styles.functionIcon} size={100} name={item.icon} />
+        <MaterialIcons style={styles.functionIcon} size={150} name={item.icon} />
         <Text style={styles.functionName}>{item.functionName}</Text>
       </View>
     </TouchableOpacity>
