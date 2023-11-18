@@ -6,6 +6,8 @@ import { styles } from '../styles/styles.js';
 import { AuthContext } from '../context/AuthContext.js';
 
 import { fetchUserFunctions } from '../services/api.js';
+import { userProfileTypeName } from '../hooks/userProfileTypeName.js';
+
 
 export default function LoggedArea({ navigation }) {
   const { user } = useContext(AuthContext);
@@ -53,12 +55,12 @@ export default function LoggedArea({ navigation }) {
       <View style={styles.loggedContainerLeft}>
         <View style={styles.sidebar}>
           <View >
-            <Text style={styles.welcome}>Bem vindo,</Text>
+            <Text style={styles.welcome}>Bem vindo, </Text>
             <Text style={styles.title}>{user.name}</Text>
           </View>
 
           <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-            <MaterialIcons name="exit-to-app" size={24} color="#FFFFFF" />
+            <MaterialIcons name="exit-to-app" marginBottom={20} marginLeft={20}size={35} color="#FFFFFF" />
           </TouchableOpacity>
         </View>
 
@@ -71,8 +73,9 @@ export default function LoggedArea({ navigation }) {
       </View>
 
 
+
       <View style={styles.loggedContainerRight}>
-        <Text style={styles.titleRoxo}>Area do </Text>
+        <Text style={styles.titleRoxo}>Area do {userProfileTypeName(user.profileType)}</Text>
         <FlatList
           data={userFunctions}
           renderItem={renderItem}

@@ -70,9 +70,9 @@ export default function CadastroUser({ navigation }) {
     <View style={styles.main}>
 
       <View style={styles.cadastroLeft}>
-        <Text style={styles.titleRoxo}>Cadastro de Pessoas</Text>
+        <Text style={styles.title}>Cadastro de Pessoas</Text>
         <Pressable onPress={() => navigation.navigate('LoggedArea')}>
-          <MaterialIcons name="exit-to-app" size={24} color="#FFFFFF" />
+          <MaterialIcons name="exit-to-app" marginBottom={20} marginLeft={20}size={35} color="#FFFFFF" />
         </Pressable>
       </View>
 
@@ -94,7 +94,7 @@ export default function CadastroUser({ navigation }) {
         />
 
         <Button onPress={() => setModalVisible(true)} marginBottom={20}>
-          <Text style={styles.titleRoxo}>Adicionar Usuário</Text>
+          <Text style={styles.title}>Adicionar Usuário</Text>
         </Button>
       </View>
     </View>

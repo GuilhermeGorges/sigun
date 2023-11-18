@@ -35,7 +35,6 @@ export const styles = StyleSheet.create({
     marginTop: 20,
     borderRadius: 4
   },
-
   // login
 
   imageContainer: {
@@ -97,10 +96,11 @@ export const styles = StyleSheet.create({
     padding: 10,
   },
   welcome: {
+    fontSize: 20,
     color: "#FFFFFF",
   },
   title: {
-    fontSize: 24,
+    fontSize: 25,
     fontWeight: 'bold',
     color: "#FFFFFF",
   },
@@ -152,11 +152,15 @@ export const styles = StyleSheet.create({
 
   cadastroLeft: {
     flex: 2,
-    alignItems: 'center',
-    textAlign: 'center',
-    justifyContent: 'center',
     backgroundColor: '#6C79F1',
-    position: 'relative'
+    position: 'relative',
+    width: '100%',
+    height: '100%',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    backgroundColor: '#6C79F1',
+    color: '#FFFFFF',
+    padding: 10,
   },
   cadastroRight: {
     flex: 3,
@@ -166,9 +170,11 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
   },
   titleRoxo: {
-    fontSize: 24,
+    marginTop: 20,
+    marginLeft: 20,
+    fontSize: 35,
     fontWeight: 'bold',
-    color: "#FFFFFF",
+    color: '#6C79F1',
   },
   item: {
     flex: 1,
