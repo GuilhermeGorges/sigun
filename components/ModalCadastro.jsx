@@ -1,37 +1,35 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { MaterialIcons } from '@expo/vector-icons';
-import { View, Text, TextInput, Pressable, Picker, Modal, FlatList, Alert, TouchableOpacity } from 'react-native';
+import React, { useState, useContext } from 'react';
+import { View, Text, TextInput, Picker, Modal } from 'react-native';
 import { styles } from '../styles/styles'; 
 import Button from '../components/Button.jsx';
 import { AuthContext } from '../context/AuthContext.js';
 
-import { cadastrarUsuarios, listarUsuarios, excluirUsuario } from '../services/api.js';
+import { cadastrarUsuarios } from '../services/api.js';
 
-const cadastrarUsuario = async () => {
-    try {
-      await cadastrarUsuarios(username, senha, perfil, nome);
-      setModalVisible(false);
-      carregarUsuarios();
-    } catch (error) {
-      console.error('Erro ao cadastrar usuário:', error.message);
-    }
-  };
 
 export default function ModalCadastro(props) {
-    const [modalVisible, setModalVisible] = useState(false);
-    
-
     const { user } = useContext(AuthContext);
     const [nome, setNome] = useState('');
     const [username, setUsername] = useState('');
     const [senha, setSenha] = useState('');
     const [perfil, setPerfil] = useState('');
+
+    const cadastrarUsuario = async () => {
+        try {
+          await cadastrarUsuarios(username, senha, perfil, nome);
+          props.setModalVisible(false);
+          props.carregarUsuarios();
+        } catch (error) {
+          console.error('Erro ao cadastrar usuário:', error.message);
+        }
+      };
+
     return (
         <Modal
           animationType="slide"
           transparent={false}
-          visible={props.modalVisible ? props.modalVisible : modalVisible}
-          onRequestClose={() => setModalVisible(false)}
+          visible={props.modalVisible}
+          onRequestClose={() => props.setModalVisible(false)} 
         >
           <View style={styles.modal}>
             <Text style={styles.titleRoxo}>Cadastro de Usuário</Text>
@@ -77,7 +75,7 @@ export default function ModalCadastro(props) {
               Cadastrar Usuário
             </Button>
 
-            <Button onPress={() => setModalVisible(false)}>
+            <Button onPress={() => props.setModalVisible(false)}>
               Fechar
             </Button>
           </View>

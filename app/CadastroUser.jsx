@@ -67,7 +67,11 @@ export default function CadastroUser({ navigation }) {
       </View>
 
       <View style={styles.cadastroRight}>
-        <ModalCadastro modalVisible={modalVisible}>
+        <ModalCadastro 
+        modalVisible={modalVisible}
+        setModalVisible={setModalVisible}
+        carregarUsuarios={carregarUsuarios}
+        >
         
         </ModalCadastro>
 
@@ -78,7 +82,7 @@ export default function CadastroUser({ navigation }) {
           keyExtractor={(item) => item.id.toString()}
         />
 
-        <Button onPress={() => setModalVisible(true)} modalVisible={modalVisible}>
+        <Button onPress={() => setModalVisible(true)}>
           <Text style={styles.titleRoxo}>Adicionar Usuário</Text>
         </Button>
       </View>
