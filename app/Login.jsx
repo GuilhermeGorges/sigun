@@ -1,10 +1,12 @@
-import { Text, TextInput, View, Image } from 'react-native';
+import { Text, TextInput, View, Dimensions } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 import Button from '../components/Button.jsx';
 import { styles } from '../styles/styles.js';
 import { AuthContext } from '../context/AuthContext.js';
 import { useContext, useState } from 'react';
+
+const isMobile = Dimensions.get('window').width < 600;
 
 export default function Login({ navigation }) {
   const { login } = useContext(AuthContext)
@@ -29,10 +31,9 @@ export default function Login({ navigation }) {
   return (
     <View style={styles.main}>
       <View style={styles.imageContainer}>
-        {/* <Image style={styles.hero} source={require('../assets/home.jpg')} /> */}
-        <Text style={styles.overlayTitle}> SIGUN </Text>
+        <Text style={isMobile ? styles.overlayTitleMobile : styles.overlayTitle}> SIGUN </Text>
         
-        <MaterialIcons name="school" style={styles.overlayIcon} />
+        <MaterialIcons name="school" style={isMobile ? styles.overlayTitleMobile : styles.overlayIcon} />
         
       </View>
       <View style={styles.loginContainer}>

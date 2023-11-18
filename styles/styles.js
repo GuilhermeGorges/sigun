@@ -55,9 +55,17 @@ export const styles = StyleSheet.create({
     fontSize: 100,
     fontWeight: 'bold',
     color: '#FFFFFF',
-    zIndex: 2,
   },
   overlayIcon: {
+    fontSize: 200,
+    color: '#FFFFFF',
+  },
+  overlayTitleMobile: {
+    fontSize: 50,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+  },
+  overlayIconMobile: {
     fontSize: 200,
     color: '#FFFFFF',
   },
@@ -102,22 +110,26 @@ export const styles = StyleSheet.create({
   loggedContainerRight: {
     flex: 3,
     backgroundColor: '#f5f5f5',
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
   },
   flatListContainer: {
-    flexGrow: 1,
+    marginTop: 20,
+    marginBottom: 20,
+    marginHorizontal: 150,
+    flexDirection: 'column',
+    justifyContent: 'space-between', 
+    alignItems: 'stretch', 
+    width: '45%', 
+    height: '100%', 
+  },
+  flatListContainerMobile: {
     marginTop: 20,
     marginBottom: 20,
     marginHorizontal: 70,
-    flex: 1,
-    flexDirection: 'column', // ou 'row' dependendo da orientação desejada
-    justifyContent: 'space-between', // ou 'space-around' dependendo do espaçamento desejado
+    flexDirection: 'column', 
+    justifyContent: 'space-between',
     alignItems: 'stretch', 
-    borderWidth: 1,
-    borderRadius: 10, 
-    width: '80%', 
-    height: '80%', 
+    width: '45%', 
+    height: '100%', 
   },
   functionContainer: {
     flex: 1,
@@ -126,16 +138,29 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 20,
-    borderWidth: 1,
   },
   functionName: {
     fontSize: 24,
     fontWeight: 'bold',
     color: "#6C79F1",
-    borderWidth: 1,
   },
   functionIcon: {
     color: "#6C79F1",
-    borderWidth: 1,
+  },
+
+
+
+  cadastroLeft: {
+    flex: 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#6C79F1',
+    position: 'relative'
+  },
+  cadastroRight: {
+    flex: 3,
+    backgroundColor: '#F5F5F5',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });

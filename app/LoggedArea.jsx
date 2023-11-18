@@ -2,10 +2,10 @@ import { AntDesign, MaterialIcons } from '@expo/vector-icons';
 import { Text, TouchableOpacity, View, FlatList, Dimensions } from 'react-native';
 import { styles } from '../styles/styles.js';
 import { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../context/AuthContext';
+import { AuthContext } from '../context/AuthContext.js';
 
 
-import { fetchUserFunctions } from '../services/api';
+import { fetchUserFunctions } from '../services/api.js';
 
 export default function LoggedArea({ navigation }) {
   const { user } = useContext(AuthContext);
@@ -25,7 +25,16 @@ export default function LoggedArea({ navigation }) {
 
 
   const handleFunctionClick = (functionName) => {
-    console.log(`Clicou na função: ${functionName}`);
+    switch(functionName) {
+      case 'Função 1': 
+        navigation.navigate('CadastroUser');
+        console.log(functionName);
+        break;
+      default:
+        
+        console.log("default ", functionName);
+        break;
+    }
   };
 
   const renderItem = ({ item }) => (
@@ -69,7 +78,7 @@ export default function LoggedArea({ navigation }) {
           keyExtractor={(item, index) => `${item.functionName}-${index}`}
           showsVerticalScrollIndicator={true}
           numColumns={isMobile ? 1 : 2}
-          contentContainerStyle={styles.flatListContainer}
+          contentContainerStyle={isMobile ? styles.flatListContainerMobile :styles.flatListContainer}
           columnWrapperStyle={isMobile ? null :{justifyContent: 'space-between'}}
         />
     </View>
