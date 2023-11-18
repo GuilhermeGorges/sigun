@@ -163,18 +163,38 @@ export const styles = StyleSheet.create({
     backgroundColor: '#F5F5F5',
     alignItems: 'center',
     justifyContent: 'center',
+    borderWidth: 1,
   },
   titleRoxo: {
     fontSize: 24,
     fontWeight: 'bold',
     color: "#FFFFFF",
   },
-  // modal 
   item: {
+    flex: 1,
     fontSize: 24,
     fontWeight: 'bold',
     color: "#000000",
+    flexDirection: 'row', 
+    justifyContent: 'space-between',
+    borderWidth: 1,
+    width: '80%',
+    height: '80%',
   },
+  itemText: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: "#000000",
+    borderWidth: 1,
+  },
+  flatListRenderItem: {
+    flex: 1,
+    width: '100%', 
+    height: '100%', 
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  // modal 
   modal: {
     fontSize: 24,
     fontWeight: 'bold',

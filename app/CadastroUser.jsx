@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { MaterialIcons } from '@expo/vector-icons';
 import { View, Text, Pressable, FlatList, Alert, TouchableOpacity } from 'react-native';
+import { alert } from '../hooks/alert.js'
 
 import { styles } from '../styles/styles';
 import { listarUsuarios, excluirUsuario } from '../services/api.js';
@@ -33,22 +34,29 @@ export default function CadastroUser({ navigation }) {
   };
 
   const confirmarExclusao = (userId) => {
-    Alert.alert(
+    alert(
       'Confirmar Exclusão',
       'Deseja realmente excluir este usuário?',
       [
-        { text: 'Cancelar', style: 'cancel' },
-        { text: 'Confirmar', onPress: () => handleExcluirUsuario(userId) },
-      ],
-      { cancelable: false }
+        {
+          text: 'Cancelar',
+          style: 'cancel',
+        },
+        {
+          text: 'Confirmar',
+          onPress: () => {
+            handleExcluirUsuario(userId);
+          },
+        },
+      ]
     );
   };
 
   const renderItem = ({ item }) => (
     <View style={styles.item}>
-      <Text>{item.nome}</Text>
-      <Text>{item.username}</Text>
-      <Text>{item.perfil}</Text>
+      <Text style={styles.itemText}>{item.name}</Text>
+      <Text style={styles.itemText}>{item.username}</Text>
+      <Text style={styles.itemText}>{item.profileType}</Text>
       <TouchableOpacity onPress={() => confirmarExclusao(item.id)}>
         <MaterialIcons name="delete" size={24} color="black" />
       </TouchableOpacity>
@@ -78,13 +86,14 @@ export default function CadastroUser({ navigation }) {
         </ModalCadastro>
 
 
-        <FlatList
+        <FlatList 
+          contentContainerStyle={styles.flatListRenderItem}
           data={usuarios}
           renderItem={renderItem}
           keyExtractor={(item) => item.id.toString()}
         />
 
-        <Button onPress={() => setModalVisible(true)}>
+        <Button onPress={() => setModalVisible(true)} marginBottom={20}>
           <Text style={styles.titleRoxo}>Adicionar Usuário</Text>
         </Button>
       </View>
