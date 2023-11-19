@@ -59,6 +59,11 @@ export default function LoggedArea({ navigation }) {
             <Text style={styles.title}>{user.name}</Text>
           </View>
 
+          <View  style={styles.schoolIconContainer}>
+            <Text style={isMobile ? styles.overlayTitleMobile : styles.overlayTitle}> SIGUN </Text>
+            <MaterialIcons name="school" style={isMobile ? styles.overlayTitleMobile : styles.overlayIcon}/>
+          </View>
+          
           <TouchableOpacity onPress={() => navigation.navigate('Login')}>
             <MaterialIcons name="exit-to-app" marginBottom={20} marginLeft={20}size={35} color="#FFFFFF" />
           </TouchableOpacity>
@@ -75,7 +80,7 @@ export default function LoggedArea({ navigation }) {
 
 
       <View style={styles.loggedContainerRight}>
-        <Text style={styles.titleRoxo}>Area do {userProfileTypeName(user.profileType)}</Text>
+        <Text style={styles.titleRoxo}>Área do {userProfileTypeName(user.profileType)}</Text>
         <FlatList
           data={userFunctions}
           renderItem={renderItem}

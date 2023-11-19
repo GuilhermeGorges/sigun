@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { MaterialIcons } from '@expo/vector-icons';
-import { View, Text, Pressable, FlatList, Alert, TouchableOpacity } from 'react-native';
+import { View, Text, Pressable, FlatList, Dimensions, TouchableOpacity } from 'react-native';
 import { alert } from '../hooks/alert.js'
 
 import { styles } from '../styles/styles';
@@ -9,6 +9,7 @@ import { listarUsuarios, excluirUsuario } from '../services/api.js';
 import Button from '../components/Button.jsx';
 import ModalCadastro from '../components/ModalCadastro';
 
+const isMobile = Dimensions.get('window').width < 600;
 
 export default function CadastroUser({ navigation }) {
   const [modalVisible, setModalVisible] = useState(false);
@@ -66,11 +67,20 @@ export default function CadastroUser({ navigation }) {
   useEffect(() => {
     carregarUsuarios();
   }, []);
+  
   return (
     <View style={styles.main}>
 
       <View style={styles.cadastroLeft}>
         <Text style={styles.title}>Cadastro de Pessoas</Text>
+
+        
+        <View  style={styles.schoolIconContainer}>
+            <Text style={isMobile ? styles.overlayTitleMobile : styles.overlayTitle}> SIGUN </Text>
+            <MaterialIcons name="school" style={isMobile ? styles.overlayTitleMobile : styles.overlayIcon}/>
+          </View>
+          
+
         <Pressable onPress={() => navigation.navigate('LoggedArea')}>
           <MaterialIcons name="exit-to-app" marginBottom={20} marginLeft={20}size={35} color="#FFFFFF" />
         </Pressable>

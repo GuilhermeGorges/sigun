@@ -104,6 +104,11 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: "#FFFFFF",
   },
+  schoolIconContainer: {
+    flex: 1,
+    alignItems: 'center', 
+    justifyContent: 'center', 
+  },
 
   // right
 
@@ -167,7 +172,6 @@ export const styles = StyleSheet.create({
     backgroundColor: '#F5F5F5',
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 1,
   },
   titleRoxo: {
     marginTop: 20,

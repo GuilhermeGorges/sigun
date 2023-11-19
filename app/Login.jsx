@@ -1,4 +1,4 @@
-import { Text, TextInput, View, Dimensions } from 'react-native';
+import { Text, TextInput, View, Dimensions, Pressable, TouchableOpacity } from 'react-native';
 import { useContext, useState } from 'react';
 import { MaterialIcons } from '@expo/vector-icons';
 
@@ -29,6 +29,10 @@ export default function Login({ navigation }) {
     }
   }
 
+  async function recuperarSenha() {
+  
+  }
+
   return (
     <View style={styles.main}>
       <View style={styles.imageContainer}>
@@ -47,6 +51,9 @@ export default function Login({ navigation }) {
         <Text>
           {erro}
         </Text>
+        <TouchableOpacity onPress={recuperarSenha} style={{ marginTop: 10, color: '#6C79F1' }}>
+          Recuperar Senha
+        </TouchableOpacity>
       </View>
     </View>
   );
