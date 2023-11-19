@@ -5,6 +5,7 @@ import { alert } from '../hooks/alert.js'
 
 import { styles } from '../styles/styles';
 import { listarUsuarios, excluirUsuario } from '../services/api.js';
+import { userProfileTypeName } from '../hooks/userProfileTypeName.js';
 import { AuthContext } from '../context/AuthContext.js';
 
 import Button from '../components/Button.jsx';
@@ -59,7 +60,7 @@ export default function CadastroUser({ navigation }) {
     <View style={styles.item}>
       <Text style={styles.itemText}>{item.name}</Text>
       <Text style={styles.itemText}>{item.username}</Text>
-      <Text style={styles.itemText}>{item.profileType}</Text>
+      <Text style={styles.itemText}>{userProfileTypeName(item.profileType)}</Text>
       <TouchableOpacity onPress={() => confirmarExclusao(item.id)}>
         <MaterialIcons name="delete" size={24} color="black" />
       </TouchableOpacity>
