@@ -40,7 +40,7 @@ Você pode visualizar o layout do projeto através [desse link](https://www.figm
 
 Agora você pode acessar [`localhost:19006`](http://localhost:19006/) do seu navegador.
 
-Link de acesso ao app no [vercel](https://sigun.vercel.app/).
+Link de acesso ao app [vercel](https://sigun.vercel.app/).
 
 ## 📄 Licença
 
@@ -48,4 +48,4 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para
 
 ---
 
-Feito durante o curso de Analise e Desenvolvimento de Sistemas do Senac. 
+Feito durante o curso de Analise e Desenvolvimento de Sistemas do Senac, como pré-requisito para disciplina de Projeto Integrador. 
