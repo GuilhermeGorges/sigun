@@ -113,8 +113,8 @@ export const styles = StyleSheet.create({
   },
   schoolIconContainer: {
     flex: 1,
-    alignItems: 'center', 
-    justifyContent: 'center', 
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 
   // right
@@ -128,25 +128,25 @@ export const styles = StyleSheet.create({
     marginBottom: 20,
     marginHorizontal: 150,
     flexDirection: 'column',
-    justifyContent: 'space-between', 
-    alignItems: 'stretch', 
-    width: '45%', 
-    height: '100%', 
+    justifyContent: 'space-between',
+    alignItems: 'stretch',
+    width: '45%',
+    height: '100%',
   },
   flatListContainerMobile: {
     marginTop: 20,
     marginBottom: 20,
     marginHorizontal: 70,
-    flexDirection: 'column', 
+    flexDirection: 'column',
     justifyContent: 'space-between',
-    alignItems: 'stretch', 
-    width: '45%', 
-    height: '100%', 
+    alignItems: 'stretch',
+    width: '45%',
+    height: '100%',
   },
   functionContainer: {
     flex: 1,
-    width: '100%', 
-    height: '100%', 
+    width: '100%',
+    height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 20,
@@ -160,7 +160,7 @@ export const styles = StyleSheet.create({
     color: "#6C79F1",
   },
 
-// tela cadastro
+  // tela cadastro
 
   cadastroLeft: {
     flex: 2,
@@ -185,7 +185,7 @@ export const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     color: "#000000",
-    flexDirection: 'row', 
+    flexDirection: 'row',
     justifyContent: 'space-between',
     borderWidth: 1,
     width: '80%',
@@ -199,15 +199,15 @@ export const styles = StyleSheet.create({
   },
   flatListRenderItem: {
     flex: 1,
-    width: '100%', 
-    height: '100%', 
+    width: '100%',
+    height: '100%',
     alignItems: 'center',
     marginBottom: 20,
   },
   table: {
     flex: 1,
-    width: '100%', 
-    height: '100%', 
+    width: '100%',
+    height: '100%',
     alignItems: 'center',
   },
   tableHeader: {
@@ -225,39 +225,32 @@ export const styles = StyleSheet.create({
     color: '#6C79F1',
   },
   // modal 
-  modal: {
-    fontSize: 24,
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#6C79F1',
+  },
+  modalContent: {
+    width: '80%',
+    backgroundColor: 'white',
+    padding: 20,
+    borderRadius: 10,
+  },
+  modalTitle: {
     fontWeight: 'bold',
-    color: "#000000",
+    marginBottom: 20,
+    marginTop: 20,
+    marginLeft: 20,
+    fontSize: 35,
+    fontWeight: 'bold',
+    color: '#6C79F1',
+  },
+  modalInput: {
+    width: '100%',
+    marginBottom: 15,
+    borderColor: 'F1EEEE',
+    backgroundColor: 'C1C1C1',
   },
 
-
- modalContainer: {
-  flex: 1,
-  justifyContent: 'center',
-  alignItems: 'center',
-  backgroundColor: '#6C79F1', // fundo escuro transparente
-},
-modalContent: {
-  width: '80%', // ajuste a largura conforme necessário
-  backgroundColor: 'white',
-  padding: 20,
-  borderRadius: 10,
-},
-modalTitle: {
-  fontWeight: 'bold',
-  marginBottom: 20,
-  marginTop: 20,
-  marginLeft: 20,
-  fontSize: 35,
-  fontWeight: 'bold',
-  color: '#6C79F1',
-},
-modalInput: {
-  width: '100%',
-  marginBottom: 15,
-  borderColor: 'F1EEEE',
-  backgroundColor: 'C1C1C1',
-},
-  
 });
