@@ -185,8 +185,8 @@ export const styles = StyleSheet.create({
   table: {
     flex: 1,
     width: '100%',
-    height: '100%',
     alignItems: 'center',
+    paddingTop: 10,
   },
   tableHeader: {
     flexDirection: 'row',
@@ -203,24 +203,21 @@ export const styles = StyleSheet.create({
     color: '#6C79F1',
   },
   item: {
-    boxSizing: 'border-box',
+    marginBottom: 20,
     fontSize: 24,
     fontWeight: 'bold',
     color: "#000000",
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    borderWidth: 1,
+    justifyContent: 'stretch',
     width: '100%',
     height: '100%',
-    borderColor: '#6C79F1',
   },
   itemText: {
+    marginLeft: 30,
+    marginRight: 30,
     fontSize: 24,
-    size : 1000,
     fontWeight: 'bold',
     color: "#000000",
-    borderWidth: 1,
-    borderColor: '#6C79F1',
   },
   flatListRenderItem: {
     flex: 1,

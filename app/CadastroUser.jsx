@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import { MaterialIcons } from '@expo/vector-icons';
-import { View, Text, Pressable, FlatList, Dimensions, TouchableOpacity } from 'react-native';
+import { View, ScrollView, Text, Pressable, FlatList, Dimensions, TouchableOpacity } from 'react-native';
 import { alert } from '../hooks/alert.js'
 
 import { styles } from '../styles/styles';
@@ -62,7 +62,7 @@ export default function CadastroUser({ navigation }) {
       <Text style={styles.itemText}>{item.username}</Text>
       <Text style={styles.itemText}>{userProfileTypeName(item.profileType)}</Text>
       <TouchableOpacity onPress={() => confirmarExclusao(item.id)}>
-        <MaterialIcons name="delete" size={24} color="black" />
+        <MaterialIcons name="delete" size={24} color="red" />
       </TouchableOpacity>
     </View>
   );
@@ -104,6 +104,7 @@ export default function CadastroUser({ navigation }) {
             <Text style={styles.headerText}>Username</Text>
             <Text style={styles.headerText}>Perfil</Text>
           </View>
+      <ScrollView horizontal>
           <FlatList
 
             contentContainerStyle={styles.flatListRenderItem}
@@ -111,6 +112,7 @@ export default function CadastroUser({ navigation }) {
             renderItem={renderItem}
             keyExtractor={(item) => item.id.toString()}
           />
+          </ScrollView>
         </View>
 
         <Button onPress={() => setModalVisible(true)} marginBottom={20}>
