@@ -28,7 +28,7 @@ export default function LoggedArea({ navigation }) {
 
   const handleFunctionClick = (functionName) => {
     switch (functionName) {
-      case 'Função 1':
+      case 'Cadastro de Usuários':
         navigation.navigate('CadastroUser');
         console.log(functionName);
         break;

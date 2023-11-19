@@ -152,7 +152,7 @@ export const styles = StyleSheet.create({
     marginBottom: 20,
   },
   functionName: {
-    fontSize: 24,
+    fontSize: 17,
     fontWeight: 'bold',
     color: "#6C79F1",
   },
