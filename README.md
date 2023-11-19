@@ -36,7 +36,7 @@ Você pode visualizar o layout do projeto através [desse link](https://www.figm
 - Clone este repositório
 - Clone o repositório [backend](https://github.com/GuilhermeGorges/sigun-backend)
 - Instale as dependências com `npm i`
-- Inicie o backend com `npm run`
+- Inicie o backend com `npm start`
 - Inicie o servidor com `npm run web`
 
 Agora você pode acessar [`localhost:19006`](http://localhost:19006/) do seu navegador.
