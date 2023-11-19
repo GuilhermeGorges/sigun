@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { Text, TouchableOpacity, View, FlatList, Dimensions } from 'react-native';
+import { Linking, Text, TouchableOpacity, View, FlatList, Dimensions } from 'react-native';
 import { AntDesign, MaterialIcons } from '@expo/vector-icons';
 
 import { styles } from '../styles/styles.js';
@@ -30,6 +30,14 @@ export default function LoggedArea({ navigation }) {
     switch (functionName) {
       case 'Cadastro de Usuários':
         navigation.navigate('CadastroUser');
+        console.log(functionName);
+        break;
+      case 'E-mail':
+        Linking.openURL('https://gmail.com/');
+        console.log(functionName);
+        break;
+      case 'Estágio':
+        Linking.openURL('https://portal.sc.senac.br/portal/app/frame.aspx?secao_id=11');
         console.log(functionName);
         break;
       default:
