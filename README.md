@@ -13,7 +13,7 @@
   <img alt="Sigun" src=".github/logged-area.png" width="41%">
 </p>
 
-##  Tecnologias
+## :magic_wand: Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
@@ -31,7 +31,7 @@ O sigun um sistema de gestão universitária
 
 Você pode visualizar o layout do projeto através [desse link](https://www.figma.com/file/YornGTzkkOesqn62DlP52f/PI---Grupo-04?type=design&node-id=0-1&mode=design). É necessário ter conta no [Figma](http://figma.com/) para acessá-lo.
 
-## Como executar
+## :boom: Como executar
 
 - Clone o repositório
 - Instale as dependências com `npm i`
