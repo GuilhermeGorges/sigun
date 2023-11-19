@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { MaterialIcons } from '@expo/vector-icons';
 import { View, Text, Pressable, FlatList, Dimensions, TouchableOpacity } from 'react-native';
 import { alert } from '../hooks/alert.js'
 
 import { styles } from '../styles/styles';
 import { listarUsuarios, excluirUsuario } from '../services/api.js';
+import { AuthContext } from '../context/AuthContext.js';
 
 import Button from '../components/Button.jsx';
 import ModalCadastro from '../components/ModalCadastro';
@@ -12,12 +13,13 @@ import ModalCadastro from '../components/ModalCadastro';
 const isMobile = Dimensions.get('window').width < 600;
 
 export default function CadastroUser({ navigation }) {
+  const { user } = useContext(AuthContext);
   const [modalVisible, setModalVisible] = useState(false);
   const [usuarios, setUsuarios] = useState([]);
 
   const carregarUsuarios = async () => {
     try {
-      const listaUsuarios = await listarUsuarios();
+      const listaUsuarios = await listarUsuarios(user.id);
       setUsuarios(listaUsuarios);
     } catch (error) {
       console.error('Erro ao carregar usuários:', error.message);
@@ -67,22 +69,22 @@ export default function CadastroUser({ navigation }) {
   useEffect(() => {
     carregarUsuarios();
   }, []);
-  
+
   return (
     <View style={styles.main}>
 
       <View style={styles.cadastroLeft}>
         <Text style={styles.title}>Cadastro de Pessoas</Text>
 
-        
-        <View  style={styles.schoolIconContainer}>
-            <Text style={isMobile ? styles.overlayTitleMobile : styles.overlayTitle}> SIGUN </Text>
-            <MaterialIcons name="school" style={isMobile ? styles.overlayTitleMobile : styles.overlayIcon}/>
-          </View>
-          
+
+        <View style={styles.schoolIconContainer}>
+          <Text style={isMobile ? styles.overlayTitleMobile : styles.overlayTitle}> SIGUN </Text>
+          <MaterialIcons name="school" style={isMobile ? styles.overlayTitleMobile : styles.overlayIcon} />
+        </View>
+
 
         <Pressable onPress={() => navigation.navigate('LoggedArea')}>
-          <MaterialIcons name="exit-to-app" marginBottom={20} marginLeft={20}size={35} color="#FFFFFF" />
+          <MaterialIcons name="exit-to-app" marginBottom={20} marginLeft={20} size={35} color="#FFFFFF" />
         </Pressable>
       </View>
 
@@ -95,13 +97,20 @@ export default function CadastroUser({ navigation }) {
 
         </ModalCadastro>
 
+        <View style={styles.table}>
+          <View style={styles.tableHeader}>
+            <Text style={styles.headerText}>Nome</Text>
+            <Text style={styles.headerText}>Username</Text>
+            <Text style={styles.headerText}>Perfil</Text>
+          </View>
+          <FlatList
 
-        <FlatList 
-          contentContainerStyle={styles.flatListRenderItem}
-          data={usuarios}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id.toString()}
-        />
+            contentContainerStyle={styles.flatListRenderItem}
+            data={usuarios}
+            renderItem={renderItem}
+            keyExtractor={(item) => item.id.toString()}
+          />
+        </View>
 
         <Button onPress={() => setModalVisible(true)} marginBottom={20}>
           <Text style={styles.title}>Adicionar Usuário</Text>

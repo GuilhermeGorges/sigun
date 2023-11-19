@@ -85,9 +85,9 @@ export const excluirUsuario = async (userId) => {
     }
 };
 
-export const listarUsuarios = async (profileType = '') => {
+export const listarUsuarios = async (excludeUserId, profileType = '') => {
     try {
-        const response = await fetch(`${BASE_URL}/user/users${profileType ? `?profileType=${profileType}` : ''}`);
+        const response = await fetch(`${BASE_URL}/user/users/${excludeUserId}${profileType ? `?profileType=${profileType}` : ''}`);
 
         if (!response.ok) {
             throw new Error(`Erro na requisição para listar usuários: ${response.statusText}`);
