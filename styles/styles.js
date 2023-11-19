@@ -182,6 +182,26 @@ export const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 20,
   },
+  table: {
+    flex: 1,
+    width: '100%',
+    height: '100%',
+    alignItems: 'center',
+  },
+  tableHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    borderBottomWidth: 2,
+    marginBottom: 10,
+    paddingVertical: 5,
+    borderColor: '#6C79F1',
+    width: '80%',
+  },
+  headerText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#6C79F1',
+  },
   item: {
     boxSizing: 'border-box',
     fontSize: 24,
@@ -208,26 +228,6 @@ export const styles = StyleSheet.create({
     height: '100%',
     alignItems: 'center',
     marginBottom: 20,
-  },
-  table: {
-    flex: 1,
-    width: '100%',
-    height: '100%',
-    alignItems: 'center',
-  },
-  tableHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    borderBottomWidth: 2,
-    marginBottom: 10,
-    paddingVertical: 5,
-    borderColor: '#6C79F1',
-    width: '80%',
-  },
-  headerText: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#6C79F1',
   },
   // modal 
   modalContainer: {
