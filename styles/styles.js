@@ -230,5 +230,34 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: "#000000",
   },
+
+
+ modalContainer: {
+  flex: 1,
+  justifyContent: 'center',
+  alignItems: 'center',
+  backgroundColor: '#6C79F1', // fundo escuro transparente
+},
+modalContent: {
+  width: '80%', // ajuste a largura conforme necessário
+  backgroundColor: 'white',
+  padding: 20,
+  borderRadius: 10,
+},
+modalTitle: {
+  fontWeight: 'bold',
+  marginBottom: 20,
+  marginTop: 20,
+  marginLeft: 20,
+  fontSize: 35,
+  fontWeight: 'bold',
+  color: '#6C79F1',
+},
+modalInput: {
+  width: '100%',
+  marginBottom: 15,
+  borderColor: 'F1EEEE',
+  backgroundColor: 'C1C1C1',
+},
   
 });
